@@ -72,32 +72,24 @@
     };
   };
 
-  // Apply the section activation/deactivation
-  const setSectionActive = () => {
-        sections.forEach(section => {
-          const elemeOffset = offset(section);
-
-          inviewport = () => elemeOffset < 150 && elemeOffset >= -150;
-          deActive(section);
-          secActive(inviewport(),section);
-        });
-  };
-
-  window.addEventListener('scroll',setSectionActive);
-
 // Scroll to anchor ID using scrollTO event
-  const scrollToFun = () => {
-      // Select all nav bar links and anchors
-      const anchors = document.querySelectorAll('.navbar__menu a');
-      anchors.forEach(anchor => {
-        anchor.addEventListener('click',() => {
-          for(i = 0; i < sections; i++){
-            sections[i].addEventListener('click', sectionScroll(anchor));
-          }
-        });
-    });
-  };
-  scrollToFun();
+const links = document.querySelectorAll(".page__header ul a");
+
+for (const link of links) {
+  link.addEventListener("click", clickHandler);
+}
+
+function clickHandler(e) {
+  e.preventDefault();
+  const href = this.getAttribute("href");
+  const offsetTop = document.querySelector(href).offsetTop;
+
+  scrollTo({
+    top: offsetTop,
+    behavior: "smooth"
+  });
+}
+
 /**
  * End Main Functions
  * Begin Events
@@ -109,3 +101,15 @@
 // Scroll to section on link click
 
 // Set sections as active
+// Apply the section activation/deactivation
+const setSectionActive = () => {
+      sections.forEach(section => {
+        const elemeOffset = offset(section);
+
+        inviewport = () => elemeOffset < 150 && elemeOffset >= -150;
+        deActive(section);
+        secActive(inviewport(),section);
+      });
+};
+
+window.addEventListener('scroll',setSectionActive);
