@@ -9,11 +9,12 @@
 */
 /* ---- Base Rules ---- */
 body {
-    background: rgb(136,203,171);
-    background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%);
+    /* background: rgb(136,203,171); */
+       background: #fff;
+    /* background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%); */
     margin: 0;
     font-family: 'Merriweather', serif;
-    color: #fff;
+    color: black;
 }
 
 
@@ -35,12 +36,12 @@ h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
     font-size: 3em;
-    color: #fff;
+    color: #000;
 }
 
 p {
     line-height: 1.6em;
-    color: #eee;
+    color: #000;
 }
 
 /* ---- Layout Rules ---- */
@@ -63,32 +64,43 @@ section {
 
 /* Navigation Styles*/
 .navbar__menu ul {
+    /* Added to fix nav bar responsiveness */
+    padding: 1%;
     padding-left: 0;
     margin: 0;
-    text-align: right;
+    /* text-align: right; */
+    text-align: left;
 }
 
 .navbar__menu li {
-    display: inline-block;
+    /*Change display to fix nav bar responsiveness */
+    /* display: inline-block; */
+    display: inline-flex;
+    padding: 0.5%;
 }
 
 .navbar__menu .menu__link {
-    display: block;
-    padding: 1em;
+     display: block;
+    /* Remove these to fix nav bar responsiveness*/
+    /*padding: 1em; */
     font-weight: bold;
     text-decoration: none;
-    color: #000;
+    color: #fff;
 }
 
 .navbar__menu .menu__link:hover {
-    background: #333;
+    /* background: #333;
     color: #fff;
-    transition: ease 0.3s all;
+    transition: ease 0.3s all; */
+    color: rgb(0,13,60,1);
+  text-decoration: underline;
 }
 
 /* Header Styles */
 .page__header {
-    background: #fff;
+    /* background: #fff; */
+    background: rgb(255, 166, 41);
+    background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: fixed;
     top: 0;
     width: 100%;
