@@ -86,8 +86,18 @@
   window.addEventListener('scroll',setSectionActive);
 
 // Scroll to anchor ID using scrollTO event
-
-
+  const scrollToFun = () => {
+      // Select all nav bar links and anchors
+      const anchors = document.querySelectorAll('.navbar__menu a');
+      anchors.forEach(anchor => {
+        anchor.addEventListener('click',() => {
+          for(i = 0; i < sections; i++){
+            sections[i].addEventListener('click', sectionScroll(anchor));
+          }
+        });
+    });
+  };
+  scrollToFun();
 /**
  * End Main Functions
  * Begin Events
