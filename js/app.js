@@ -18,9 +18,9 @@
  *
 */
   //Add global var to get navigation list by ID
-  const nav = document.getElementById('navbar__list');
+  const navigations = document.getElementById('navbar__list');
   // Add global var for sections ( dynamically created Items of navigation bar)
-  const secs = document.querySelectorAll('section');
+  const sections = document.querySelectorAll('section');
 
 
 /**
@@ -43,19 +43,47 @@
     //Container for Navigation Items
     let navItms = '';
     // loop through each section to add nav items
-    secs.forEach( section => {
+    sections.forEach( section => {
 
         const sectionID = section.id;
         const sectionDataNav = section.dataset.nav;
-        navItms += `<li><a class = "menu__link" href="#${sectionID}"> ${sectionDataNav}`+ ` |</a></li>`;
+        navItms += `<li class= "links"><a class = "menu__link" href="#${sectionID}"> ${sectionDataNav}`+ ` |</a></li>`;
     });
     //Add to naviation bar
-    nav.innerHTML = navItms.slice(0, -11);;
+    navigations.innerHTML = navItms.slice(0, -11);;
 
   };
   navBuild ();
 // Add class 'active' to section when near top of viewport
+  // Get the section top position
+  const offset = (section) => {
+        //returns the element position relative to the viewport.
+        return Math.floor(section.getBoundingClientRect().top);
 
+  };
+  // remove section active status
+  const deActive = (section) => {
+    section.classList.remove('your-active-class');
+  };
+  // add section active status
+  const secActive = (conditional, section) => {
+    if(conditional){
+      section.classList.add('your-active-class');
+    };
+  };
+
+  // Apply the section activation/deactivation
+  const setSectionActive = () => {
+        sections.forEach(section => {
+          const elemeOffset = offset(section);
+
+          inviewport = () => elemeOffset < 150 && elemeOffset >= -150;
+          deActive(section);
+          secActive(inviewport(),section);
+        });
+  };
+
+  window.addEventListener('scroll',setSectionActive);
 
 // Scroll to anchor ID using scrollTO event
 
