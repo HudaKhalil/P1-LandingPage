@@ -9,34 +9,36 @@
 */
 /* ---- Base Rules ---- */
 body {
-    /* background: rgb(136,203,171); */
-       background: #fff;
-    /* background: linear-gradient(0deg, rgba(136,203,171,1) 0%, rgba(0,13,60,1) 100%); */
-    margin: 0;
-    font-family: 'Merriweather', serif;
-
-    color: black;
+      background: #fff;
+      margin: 0;
+      font-family: 'Merriweather', serif;
+      color: black;
 }
 
 
 /* Typeography General*/
 h1 {
+    color: #fff;
+    text-shadow: 4px 4px  8px #000;
     font-family: 'Fira Sans', sans-serif;
     font-size: 3em;
     margin: 2em 1rem;
-    /*
-    display: inline;
-	position: relative;
+    text-align:center;
+    width: 60%;
+    height: 20%;
+    transform: translateX(25%) translateY(80%) ;
+    animation-name: example;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    border-radius: 50px;
 
-	letter-spacing: -5px;
-	color: rgba(0,0,255,0.5);
-    */
 }
-/* h1:after {
-	content: "Farafeat";
-	position: absolute; left: 5px; top: 2.5px;
-	color: rgba(255,0,0,0.5);
-} */
+
+@keyframes example {
+  from {background-color: rgb(255, 166, 41);}
+  to  {background-color: rgb(255, 3, 116);}
+}
+
 
 @media only screen and (min-width: 35em){
     h1 {
@@ -64,16 +66,22 @@ main {
     margin: 10vh 1em 10vh;
 }
 
-.main-hero {
+.main__hero {
+    background: #ffffff url('../imgs/main_hero.jpg') repeat;
+    border: 1px groove #888888;
+    padding: 10px;
+    box-shadow: 5px 10px 8px #888888;
     min-height: 40vh;
     padding-top: 3em;
+    margin: auto;
+    width: 80%;
+    border-radius: 60px;
 }
 
 section {
     position: relative;
     min-height: 80vh;
 }
-
 
 /* ---- Module Rules ---- */
 
@@ -104,16 +112,13 @@ section {
 }
 
 .navbar__menu .menu__link:hover {
-    /* background: #333;
-    color: #fff;
-    transition: ease 0.3s all; */
+    transition: ease 0.5s all;
     color: rgb(0,13,60,1);
   text-decoration: underline;
 }
 
 /* Header Styles */
 .page__header {
-    /* background: #fff; */
     background: rgb(255, 166, 41);
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: fixed;
@@ -159,7 +164,7 @@ section:nth-of-type(even) .landing__container {
 /* Circles appear to be random do to use of :nth-of-type psuedo class */
 section:nth-of-type(odd) .landing__container::before {
     content: '';
-    background: rgba(255, 255, 255, 0.187);
+    background: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: absolute;
     z-index: -5;
     width: 20vh;
@@ -171,8 +176,8 @@ section:nth-of-type(odd) .landing__container::before {
 
 section:nth-of-type(even) .landing__container::before {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 3, 116);
+    background: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: absolute;
     top: 3em;
     right: 3em;
@@ -186,8 +191,8 @@ section:nth-of-type(even) .landing__container::before {
 
 section:nth-of-type(3n) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 3, 116);
+    background: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: absolute;
     right: 0;
     bottom: 0;
@@ -201,8 +206,8 @@ section:nth-of-type(3n) .landing__container::after {
 
 section:nth-of-type(3n + 1) .landing__container::after {
     content: '';
-    background: rgb(255,255,255);
-    background: linear-gradient(0deg, rgba(255,255,255,.1) 0%, rgba(255,255,255,.2) 100%);
+    background: rgb(255, 3, 116);
+    background: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: absolute;
     right: 20vw;
     bottom: -5em;
@@ -219,10 +224,10 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
   section.your-active-class {
-    background: rgb(210, 255, 140);
+    /* background: rgb(210, 255, 140);
     background: linear-gradient(0deg, rgba(255, 255, 255) 0%, rgba(61, 61, 61) 100%);
     /* background: linear-gradient(0deg, rgba(255, 3, 116) 0%, rgba(255, 166, 41) 100%); */
-    border-radius: 50px;
+    border-radius: 50px; */
 }
 
 section.your-active-class .landing__container::before {
