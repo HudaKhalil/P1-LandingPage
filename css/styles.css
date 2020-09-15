@@ -30,25 +30,17 @@ h1 {
     box-sizing:border-box;
     box-shadow: 4px 4px  8px #000;
     transform: translateX(0%) translateY(-70%) ;
-    animation-name: example;
+    animation-name: hdAnimate;
     animation-duration: 3s;
     animation-iteration-count: infinite;
     border-radius: 50px;
 }
 
- @keyframes example {
+ @keyframes hdAnimate {
   from {background-color: rgb(255, 166, 41);}
   to  {background-color: rgb(255, 3, 116);}
 }
 
-
-@media only screen and (max-width: 50em) and (min-width: 35em) {
-    h1 {
-        color: black;
-
-
-    }
-}
 
 h2 {
     border-bottom: 1px solid #cc1;
@@ -62,8 +54,9 @@ h2 {
 p {
     line-height: 1.6em;
     color: #000;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-size: 20px;
+    font-family: cursive;
+    font-size: 1.5vw;
+
 
 }
 
@@ -125,6 +118,7 @@ section {
 
 /* Header Styles */
 .page__header {
+    display: block;
     background: rgb(255, 166, 41);
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     position: fixed;

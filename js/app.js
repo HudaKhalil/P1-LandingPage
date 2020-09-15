@@ -23,6 +23,8 @@
   const sections = document.querySelectorAll('section');
   //Get the button
   const mybutton = document.getElementById("myBtn");
+  // Add global var for nav bar menu
+  const navbarMnu = document.getElementsByClassName('page__header');
 
 /**
  * End Global Variables
@@ -115,23 +117,59 @@ const setSectionActive = () => {
 
 window.addEventListener('scroll',setSectionActive);
 
+//Display navbar after scrolling has stopped
+//MIT License, https://gomakethings.com
+var scrollStop = function (callback) {
+
+	// Make sure a valid callback was provided
+	if (!callback || typeof callback !== 'function') return;
+
+	// Setup scrolling variable
+	var isScrolling;
+
+	// Listen for scroll events
+	window.addEventListener('scroll', function (event) {
+
+		// Clear our timeout throughout the scroll
+		window.clearTimeout(isScrolling);
+
+		// Set a timeout to run after scrolling ends
+		isScrolling = setTimeout(function() {
+
+			// Run the callback
+			callback();
+
+		}, 100);
+
+	}, false);
+
+};
+
+scrollStop(function () {
+    //Display menu while reach Top
+    for (var i=0;i<navbarMnu.length;i+=1){
+           navbarMnu[i].style.display = 'block';
+         };
+});
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()
-  };
+window.onscroll = function() {
+  //Hide menu wihle scroll down
+  for (var i=0;i<navbarMnu.length;i+=1){
+         navbarMnu[i].style.display = 'none';
+       };
+      scrollFunction();
+    };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = 'Block';
+    } else {
+       mybutton.style.display = 'none';
+     }
 }
-
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
