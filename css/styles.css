@@ -68,12 +68,11 @@ main {
 .main__hero {
     background: #ffffff url('../imgs/main_hero.jpg') repeat;
     border: 1px groove #888888;
-    padding: 5px;
     box-shadow: 5px 10px 8px #888888;
     min-height: 5vh;
     max-height: 60vh;
-    padding-top: 3em;
     width: 100%;
+    margin-top: 5em;
     border-radius: 60px;
 }
 
@@ -105,26 +104,29 @@ section {
      display: block;
     /* Remove these to fix nav bar responsiveness*/
     /*padding: 1em; */
-    font-weight: bold;
+    font-weight:bolder;
     text-decoration: none;
-    color: #fff;
+    color: #000;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Merienda', cursive;
 }
 
 .navbar__menu .menu__link:hover {
     transition: ease 0.5s all;
-    color: rgb(0,13,60,1);
+    color: rgb(255, 248, 59);
   text-decoration: underline;
 }
 
 /* Header Styles */
 .page__header {
     display: block;
-    background: rgb(255, 166, 41);
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
+    box-shadow: 2px 2px  8px #000;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 5;
+
 }
 
 /* Footer Styles */
@@ -299,9 +301,14 @@ section.your-active-class .landing__container::after {
   font-family: 'Merienda', cursive;
   border: none;
   outline: none;
-  background: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
+  background: rgba(255, 34, 89);
   cursor: pointer;
   padding: 15px;
   border-radius: 40%;
   box-shadow: 4px 4px  8px #000;
+}
+#myBtn:hover{
+  transition: ease 0.5s all;
+  color: rgb(255, 248, 59);
+  text-decoration: none;
 }

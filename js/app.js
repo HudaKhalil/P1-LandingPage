@@ -139,7 +139,7 @@ var scrollStop = function (callback) {
 			// Run the callback
 			callback();
 
-		}, 100);
+		}, 150);
 
 	}, false);
 
