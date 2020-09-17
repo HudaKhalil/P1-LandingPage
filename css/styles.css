@@ -19,12 +19,12 @@ body {
 /* Typeography General*/
 h1 {
     display: inline-block;
-    padding: 2%;
     color: rgb(52,198,185);
+    padding: 1%;
     text-shadow: 4px 4px  8px #000;
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Merienda', cursive;
-    font-size: 10vw;
+    font-size: 7vw;
     margin: 2em 1rem;
     border-collapse: collapse;
     box-sizing:border-box;
@@ -41,6 +41,33 @@ h1 {
   to  {background-color: rgb(255, 3, 116);}
 }
 
+@media only screen and (min-width: 35em){
+    h1 {
+        font-size: 7em;
+        margin: 2em 4rem 1em;
+    }
+}
+@media only screen and (max-width: 40em){
+    .main__hero{
+        text-align: center;
+    }
+    h1 {
+        font-size: 5em;
+        margin: 2em 4rem 1em;
+    }
+}
+@media only screen and (max-width: 30em){
+    h1 {
+        font-size: 4em;
+        margin: 1em 2rem 1em;
+    }
+}
+@media only screen and (max-width: 23em){
+    h1 {
+        font-size: 3em;
+        margin: 1em 2rem 1em;
+    }
+}
 
 h2 {
     border-bottom: 1px solid #cc1;
@@ -56,8 +83,6 @@ p {
     color: #000;
     font-family:sans-serif;
     font-size: 1.5vw;
-
-
 }
 
 /* ---- Layout Rules ---- */
@@ -69,11 +94,12 @@ main {
     background: #ffffff url('../imgs/main_hero.jpg') repeat;
     border: 1px groove #888888;
     box-shadow: 5px 10px 8px #888888;
-    min-height: 5vh;
-    max-height: 60vh;
+    min-height: 40vh;
+    max-height: 20vh;
     width: 100%;
     margin-top: 5em;
     border-radius: 60px;
+    padding-top: 3em;
 }
 
 section {
@@ -86,24 +112,28 @@ section {
 /* Navigation Styles*/
 .navbar__menu ul {
     /* Added to fix nav bar responsiveness */
-    padding: 1%;
+    /* padding: 1%;
     padding-left: 0;
     margin: 0;
     /* text-align: right; */
-    text-align: left;
+    /* text-align: left; */
+
+    padding-left: 0;
+    margin: 0;
+    text-align: right;
 }
 
 .navbar__menu li {
     /*Change display to fix nav bar responsiveness */
-    /* display: inline-block; */
-    display: inline-flex;
-    padding: 0.5%;
+    display: inline-block;
+    /* display: inline-flex; */
+    /* padding: 0.5%; */
 }
 
 .navbar__menu .menu__link {
      display: block;
     /* Remove these to fix nav bar responsiveness*/
-    /*padding: 1em; */
+    padding: 1em;
     font-weight:bolder;
     text-decoration: none;
     color: #000;
@@ -119,7 +149,7 @@ section {
 
 /* Header Styles */
 .page__header {
-    display: block;
+    /* display: block; */
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     box-shadow: 2px 2px  8px #000;
     position: fixed;
@@ -131,23 +161,45 @@ section {
 
 /* Footer Styles */
 .page__footer {
+    display:inline-flex;
+    flex-wrap: nowrap;
+    justify-content: center;
     background: #000;
-    padding: 3em;
-    color: #fff;
-}
+    padding: 1em;
+    width:100%;
 
+}
 .page__footer p{
-    color: #fff;
-}
+    color: rgb(255, 248, 59);
+    font-size: 20px;
+    text-align: center;
+    padding: 1em;
 
+}
+.page__footer a{
+    text-decoration: none;
+    color: rgb(255, 248, 59);
+}
+.page__footer a:hover{
+  transition: ease 0.5s all;
+  color: #fff;
+}
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
 .landing__container {
-    padding: 4em;
-    /* text-align: left; */
+    padding: 1em;
+    text-align: left;
 }
-.landing__container_odd{
+@media only screen and (min-width: 35em){
+    .landing__container {
+        max-width: 50em;
+        padding: 4em;
+    }
+}
+
+
+/* .landing__container_odd{
   display: flex;
   flex-direction: row;
   width: 80vw;
@@ -182,13 +234,7 @@ position:absolute;
   box-shadow: 2px 2px  8px #000;
 
 
-}
-@media only screen and (min-width: 35em){
-    .landing__container {
-        max-width: 50em;
-        padding: 4em;
-    }
-}
+} */
 
 section:nth-of-type(even) .landing__container {
     margin-right: 0;
@@ -261,7 +307,11 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
   section.your-active-class {
-
+    background: rgb(52,198,185);
+    background: linear-gradient(0deg, rgba(52,198,185,.4) 0%, rgba(52,198,185,0) 100%);
+    border-radius: 50%;
+    padding: 2em;
+    z-index: -1;
 }
 
 section.your-active-class .landing__container::before {
