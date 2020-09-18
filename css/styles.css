@@ -8,6 +8,11 @@
  *
 */
 /* ---- Base Rules ---- */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing:border-box;
+}
 body {
       background: #fff;
       margin: 0;
@@ -20,16 +25,16 @@ body {
 h1 {
     display: inline-block;
     color: rgb(52,198,185);
-    padding: 1%;
+    padding: 0.5%;
     text-shadow: 4px 4px  8px #000;
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Merienda', cursive;
     font-size: 7vw;
-    margin: 2em 1rem;
+    margin: 1em 1rem;
     border-collapse: collapse;
     box-sizing:border-box;
     box-shadow: 4px 4px  8px #000;
-    transform: translateX(0%) translateY(-70%) ;
+    transform: translateX(0%) translateY(-130%) ;
     animation-name: hdAnimate;
     animation-duration: 3s;
     animation-iteration-count: infinite;
@@ -44,9 +49,10 @@ h1 {
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
-        margin: 2em 4rem 1em;
+        margin: 2em 4rem;
     }
 }
+
 @media only screen and (max-width: 40em){
     .main__hero{
         text-align: center;
@@ -59,19 +65,19 @@ h1 {
 @media only screen and (max-width: 30em){
     h1 {
         font-size: 4em;
-        margin: 1em 2rem 1em;
+        margin: 1em 2rem;
+        transform: translateX(0%) translateY(-90%) ;
     }
 }
 @media only screen and (max-width: 23em){
     h1 {
         font-size: 3em;
-        margin: 1em 2rem 1em;
+        margin: 1em 2rem;
     }
 }
 
 h2 {
     border-bottom: 1px solid #cc1;
-    /* font-family: 'Oxygen', Sans-Serif; */
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Merienda', cursive;
     font-size: 3em;
@@ -87,6 +93,7 @@ p {
 
 /* ---- Layout Rules ---- */
 main {
+    display: block;
     margin: 10vh 1em 10vh;
 }
 
@@ -102,43 +109,36 @@ main {
     padding-top: 3em;
 }
 
-section {
+/* section {
     position: relative;
     min-height: 80vh;
-}
+} */
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
-.navbar__menu ul {
-    /* Added to fix nav bar responsiveness */
-    /* padding: 1%;
-    padding-left: 0;
-    margin: 0;
-    /* text-align: right; */
-    /* text-align: left; */
 
-    padding-left: 0;
-    margin: 0;
-    text-align: right;
+.navbar__menu{
+    display: flex;
+    width: 100%;
+    height: 8vh;
 }
 
-.navbar__menu li {
-    /*Change display to fix nav bar responsiveness */
-    display: inline-block;
-    /* display: inline-flex; */
-    /* padding: 0.5%; */
+.navbar__menu .Topnav{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+    width: 60%;
+    margin-left: auto;
 }
-
-.navbar__menu .menu__link {
-     display: block;
-    /* Remove these to fix nav bar responsiveness*/
-    padding: 1em;
-    font-weight:bolder;
+.navbar__menu .links{
+  list-style: none;
+}
+.navbar__menu .links .menu__link{
     text-decoration: none;
     color: #000;
-    font-family: 'Gloria Hallelujah', cursive;
-    font-family: 'Merienda', cursive;
+    font-size: 16px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .navbar__menu .menu__link:hover {
@@ -147,16 +147,69 @@ section {
   text-decoration: underline;
 }
 
+/* show a hamburger menu bar on small screens */
+@media only screen and (max-width: 50em) {
+  .line{
+      width: 30px;
+      height: 3px;
+      background: #000;
+      margin: 5px;
+  }
+  .navbar__menu{
+    position: relative;
+  }
+  .hamburger{
+    position: absolute;
+    cursor: pointer;
+    right: 5%;
+    top: 50%;
+    transform: translate(-5%, -50%);
+    z-index: 1;
+  }
+  .navbar__menu .Topnav{
+      position: fixed;
+      background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
+      /* height: 100vh;
+      width: 100%;
+      flex-direction: column; */
+      display: none;
+}
+}
+
+/* @media only screen and (max-width: 50em){
+    .Topnav li:not(:first-child){
+      display:none;
+        }
+    .Topnav li.icon {
+        float: right;
+        display: inline-flex;
+        padding: 1em 1em .2em 0;
+        margin: 0;
+        }
+}
+@media screen and (max-width: 46em) {
+    .Topnav.responsive {
+          position: relative;
+        }
+      .Topnav.responsive .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+      }
+      .Topnav.responsive a {
+        float: none;
+        display: inline-block;
+        text-align: left;
+      }
+} */
 /* Header Styles */
 .page__header {
-    /* display: block; */
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
     box-shadow: 2px 2px  8px #000;
     position: fixed;
     top: 0;
     width: 100%;
-    z-index: 5;
-
+    z-index: 1;
 }
 
 /* Footer Styles */
@@ -187,60 +240,85 @@ section {
 
 /* ---- Theme Rules ---- */
 /* Landing Container Styles */
-.landing__container {
-    padding: 1em;
-    text-align: left;
+.sec-container{
+  display: block;
+  justify-content: center;
+  width: 100%;
+  height: 80vw;
+  margin: 2%;
+  padding-top: 1%;
 }
-@media only screen and (min-width: 35em){
+
+.landing__container {
+    display: block;
+    width: 100%;
+    height: 77vw;
+    margin: auto;
+}
+.box__container{
+    display: inline-flex;
+    flex: 1;
+    width: 100%;
+    height: 80vw;
+}
+.text_container{
+  display: inline-block;
+  text-align:justify;
+  height: 65vw;
+  width: 50%;
+  padding: 1%;
+  margin:auto;
+}
+.img_container{
+  display: flex;
+  width: 40%;
+  height: 40%;
+  margin: 3%;
+  border-collapse: collapse;
+  box-sizing:border-box;
+  border-radius: 50%;
+  box-shadow: 2px 2px  8px #000;
+}
+@media only screen and (max-width: 50em) {
+  .main__hero{
+    height: 10%;
+  }
+  h2{
+    font-size: 2em;
+  }
+  .landing__container {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto;
+  }
+  .box__container{
+      display: inline-flex;
+      flex-direction: column;
+      justify-content: center;
+      width: 100%;
+      height: 80vw;
+    }
+  .text_container{
+      height: 50%;
+      width: 100%;
+      padding: 3%;
+      font-size: 20em;
+      margin:auto;
+    }
+    .img_container{
+      margin: auto;
+  }
+  .page__footer {
+      flex-wrap: wrap;
+    }
+}
+/* @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
         padding: 4em;
     }
-}
-
-
-/* .landing__container_odd{
-  display: flex;
-  flex-direction: row;
-  width: 80vw;
-}
-.img_container_odd{
-  float: right;
-  width: 45%;
-  height: 45%;
-  margin-left: 5vw;
-  border-collapse: collapse;
-  box-sizing:border-box;
-  border-radius: 50%;
-  box-shadow: 2px 2px  8px #000;
-}
-
-.landing__container_even{
-  display: flex;
-  flex-direction: row-reverse;
-  width: 80vw;
-margin-right: 5vw;
-position:absolute;
-
-}
-.img_container_even{
-  float: left;
-  width: 45%;
-  height: 45%;
-  margin-right: 5vw;
-  border-collapse: collapse;
-  box-sizing:border-box;
-  border-radius: 50%;
-  box-shadow: 2px 2px  8px #000;
-
-
 } */
-
-section:nth-of-type(even) .landing__container {
-    margin-right: 0;
-    margin-left: auto;
-    text-align: right;
-}
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
@@ -256,6 +334,12 @@ section:nth-of-type(odd) .landing__container::before {
     opacity: 0;
     transition: ease 0.5s all;
 }
+section:nth-of-type(odd) .landing__container h2{
+      text-align: left;
+}
+section:nth-of-type(odd) .box__container{
+      flex-direction: row-reverse;
+}
 
 section:nth-of-type(even) .landing__container::before {
     content: '';
@@ -270,6 +354,9 @@ section:nth-of-type(even) .landing__container::before {
     border-radius: 50%;
     opacity: 0;
     transition: ease 0.5s all;
+}
+section:nth-of-type(even) .landing__container h2{
+      text-align: right;
 }
 
 section:nth-of-type(3n) .landing__container::after {

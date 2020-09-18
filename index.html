@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Merienda:wght@400;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ranchers&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" href="imgs/cookbook-ico.png">  <!-- Adding Icon image-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   <!--Added for social media icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!--Added for icons -->
   <link href="css/styles.css" rel="stylesheet">
 </head>
 <body>
@@ -18,8 +18,16 @@
   IDs are only used for sections to connect menu achors to sections -->
   <header  class="page__header">
     <nav class="navbar__menu">
+      <!-- Adding hamburger Navbar for small screens -->
+      <div class="hamburger">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        </div>
+      </div>
       <!-- Navigation starts as empty UL that will be populated with JS -->
-      <ul id="navbar__list"></ul>
+      <ul class="Topnav" id="navbar__list">
+      </ul>
     </nav>
   </header>
 
@@ -35,90 +43,92 @@
     Adding more sections will automatically populate nav.
     The first section is set to active class by default -->
     <!--Design Note: Odd sections { paragraphs then img} Even sections {img then paragraphs} -->
-      <section id="section1" data-nav="About Me" class="your-active-class">
+      <section id="section1" data-nav="About me" class="sec-container your-active-class">
         <div class="landing__container">
-          <h2>About Me</h2>
-          <div class="landing__container_odd">
-              <div>
+          <h2>About me</h2>
+          <div class="box__container">
+              <img class="img_container" src="imgs/about_me.jpg" alt="My Family">
+              <div class="text_container">
                 <p >Hi I'm Huda Khalil, former Software Designer, now full time freelance Front End Developer and food blogger. I am from Egypt, Cairo, but now I moved to Ireland with my Family due to my Husband new job. I started learing Front End development with <a href="https://www.udacity.com/" target="_blank">Udacity</a> 2 years ago. My favorite things in life include my camera, cooking, and coding.</p>
 
                 <p >One of my dreams is to create this blog. And now its happening, <strong>Farafeat</strong> blog name is an Egyptian word means <strong>crumb</strong> a very tiny piece of <strong>food</strong>, <a onclick="return false" href="#">Learn more about me</a>.</p>
               </div>
-              <img class="img_container_odd" src="imgs/about_me.jpg" alt="My Family">
+
           </div>
         </div>
       </section>
 
-      <section id="section2"  data-nav="Recipes">
+      <section class="sec-container" id="section2"  data-nav="Recipes">
          <div class="landing__container">
           <h2>Recipes</h2>
-          <div class="landing__container_even">
-
-            <div>
+          <div class="box__container">
+            <img class="img_container" src="imgs/recipes.jpg" alt="Pizza Recipe">
+            <div class="text_container">
               <p>For some people, food is just a necessity to satisfy basic needs; for the others, food is more than just a basic necessity, but a pleasure that plays a significant role in their understanding of happiness. There are so many different cuisines and food preferences built by cultural and ethnical backgrounds, geographical locations and social classes. Food and popular meals can tell us a lot about the history and traditions of various nations and regions. India is a land of spices, Africa is a continent of sauces, Europe discloses esthetical beauty of food and opens up new opportunities and inventions for those who value and enjoy eating.</p>
 
               <p>Some of the recipes we keep through generations and these old traditions and knowledge are the only untouchable aspects that people try to bring with them. Come and see alist of <a onclick="return false" href="#">Recipes</a> some of them my own and others are from different chefs with different cuisines</p>
             </div>
-            <img class="img_container_even" src="imgs/recipes.jpg" alt="Pizza Recipe">
           </div>
         </div>
       </section>
 
-    <section id="section3" data-nav="Cooking Tips">
+    <section class="sec-container" id="section3" data-nav="Cooking">
       <div class="landing__container">
-        <h2>Cooking Tips</h2>
-        <div class="landing__container_odd">
-          <div>
+        <h2>Cooking</h2>
+        <div class="box__container">
+          <img class="img_container" src="imgs/cook_tips.jpg" alt="Cooking Tips">
+          <div class="text_container">
             <p>A culinary art is the art of cooking. Culinarians cut, mix, paint, and color their meals, like artists. Like art, cooking is an artwork because they have to measure how much they have to cut. Sometimes cooking needs color for baking too. ... But the term “culinary arts” is more appropriate than when it's applied to being a pastry chef.</p>
 
             <p>Most people have a basic idea of what they need when they cook at home, but most people do not have the experience to know what's good and whats's not. <a onclick="return false" href="#">Cooking Tips</a> will help you with that process and keep you calm while you enjoy your recipe.</p>
           </div>
-          <img class="img_container_odd" src="imgs/cook_tips.jpg" alt="Cooking Tips">
         </div>
       </div>
 
     </section>
-    <section id="section4" data-nav="DIY">
+    <section class="sec-container" id="section4" data-nav="DIY">
       <div class="landing__container">
         <h2>DIY</h2>
-        <div class="landing__container_even">
-          <div>
+        <div class="box__container">
+          <img class="img_container" src="imgs/diy.jpg" alt="Do it Yourself">
+          <div class="text_container">
             <p>Do you know what’s great about DIY projects? Everything. When you make items yourself, you can choose projects that suit your tastes, create them in your choice of colours/textures, and then use them to your heart’s content.</p>
 
             <p>Whether you’re aiming for efficiency, decoration, fun, or self-sufficiency, there’s a list of awesome <a onclick="return false" href="#">DIY projects</a> just waiting for you. Pick a few that you might like to try out.</p>
           </div>
-          <img class="img_container_even" src="imgs/diy.jpg" alt="Do it Yourself">
         </div>
       </div>
     </section>
 
-        <section id="section5" data-nav="Cleaning Tips">
+        <section class="sec-container" id="section5" data-nav="Cleaning">
           <div class="landing__container">
-            <h2>Cleaning Tips</h2>
-            <div class="landing__container_odd">
-              <div>
+            <h2>Cleaning</h2>
+            <div class="box__container">
+              <img class="img_container" src="imgs/clean_tips.jpg" alt="Cleaning Tips">
+              <div class="text_container">
                 <p >A few weeks ago, I had some friends over for lunch. I hadn’t cleaned my house in weeks so before they arrived, I had to go into mad dash cleaning mode. For about three hours I were running around cut off dusting everything in sight. Our friends wouldn’t have judged us on the cleanliness of our home (they may not even have noticed), but you don’t want guests to have to experience – or witness – your messiness.</p>
 
                 <p >For me, this was the last straw. Tired of playing catch-up with my cleaning, I decided to make a proper cleaning schedule, <a onclick="return false" href="#">Learn more cleaning tips here</a>.</p>
               </div>
-              <img class="img_container_odd" src="imgs/clean_tips.jpg" alt="Cleaning Tips">
             </div>
           </div>
         </section>
 
-        <section id="section6" data-nav="Home Tips">
+        <section class="sec-container" id="section6" data-nav="Decore">
           <div class="landing__container">
-            <h2>Home Tips</h2>
-            <div class="landing__container_even">
-              <div>
+            <h2>Decore</h2>
+            <div class="box__container">
+              <img class="img_container" src="imgs/home_tips.jpg" alt="Decore Tips">
+              <div class="text_container">
                 <p>Just like all of us we want to scramble to ready our guest room for that visit, you want to make sure everything's in  place when weekend warriors storm.</p>
 
                 <p>Changes can sometimes be very influential concerning our moods or the way we carry ourselves around. In this light, making changes in form of decorations in our living rooms, bedrooms, sitting rooms or dining places can positively impact us in various ways. Come an get some inspiration <a onclick="return false" href="#">Home tips and tricks</a> with cheap materials.</p>
               </div>
-              <img class="img_container_even" src="imgs/home_tips.jpg" alt="Home Tips">
+
             </div>
           </div>
         </section>
+
   </main>
   <footer class="page__footer">
     <p>&copy 2020 Karma Designs</p>

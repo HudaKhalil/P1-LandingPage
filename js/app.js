@@ -50,10 +50,10 @@
 
         const sectionID = section.id;
         const sectionDataNav = section.dataset.nav;
-        navItms += `<li class= "links"><a class = "menu__link" href="#${sectionID}"> ${sectionDataNav}`+ ` |</a></li>`;
+        navItms += `<li class= "links"><a class = "menu__link" href="#${sectionID}"> ${sectionDataNav}</a></li>`;
     });
     //Add to naviation bar
-    navigations.innerHTML = navItms.slice(0, -11);;
+    navigations.innerHTML = navItms;
 
   };
   navBuild ();
