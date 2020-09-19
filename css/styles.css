@@ -424,7 +424,7 @@ section.your-active-class .landing__container::after {
 		           rotate(-360deg);
 	}
 }
-#myBtn {
+#upBtn {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -444,7 +444,7 @@ section.your-active-class .landing__container::after {
   border-radius: 40%;
   box-shadow: 4px 4px  8px #000;
 }
-#myBtn:hover{
+#upBtn:hover{
   transition: ease 0.5s all;
   color: rgb(255, 248, 59);
   text-decoration: none;

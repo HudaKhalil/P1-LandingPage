@@ -22,7 +22,7 @@
   // Add global var for sections ( dynamically created Items of navigation bar)
   const sections = document.querySelectorAll('section');
   //Get the button
-  const mybutton = document.getElementById("myBtn");
+  const upButton = document.getElementById("upBtn");
   // Add global var for nav bar menu
   const navbarMnu = document.getElementsByClassName('page__header');
 
@@ -61,7 +61,7 @@
   // Get the section top position
   const offset = (section) => {
         //returns the element position relative to the viewport.
-        return Math.floor(section.getBoundingClientRect().top);
+        return section.getBoundingClientRect().top;
 
   };
   // remove section active status
@@ -76,17 +76,19 @@
   };
 
 // Scroll to anchor ID using scrollTO event
+//Select all anchor links
 const links = document.querySelectorAll(".page__header ul a");
-
+//When click
 for (const link of links) {
   link.addEventListener("click", clickHandler);
 }
 
 function clickHandler(e) {
+  //prevent click while getting the section topoffset
   e.preventDefault();
   const href = this.getAttribute("href");
   const offsetTop = document.querySelector(href).offsetTop;
-
+  // Then scroll
   scrollTo({
     top: offsetTop,
     behavior: "smooth"
@@ -152,9 +154,9 @@ scrollStop(function () {
          };
 });
 
-// When the user scrolls down 20px from the top of the document, show the button
+// When the user scrolls down 60px from the top of the document, show the button
 window.onscroll = function() {
-  //Hide menu wihle scroll down
+  //Hide menu while scroll down
   for (var i=0;i<navbarMnu.length;i+=1){
          navbarMnu[i].style.display = 'none';
        };
@@ -162,11 +164,13 @@ window.onscroll = function() {
     };
 
 function scrollFunction() {
-    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-        mybutton.style.display = 'Block';
+    if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+
+        upButton.style.display = 'Block';
     } else {
-       mybutton.style.display = 'none';
+       upButton.style.display = 'none';
      }
+
 }
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
