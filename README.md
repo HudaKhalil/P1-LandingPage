@@ -2,9 +2,9 @@
 
 ## Table of Contents
 
-* [About The Project](#About The Project)
-* [Core Features](#Core Features)
-* [Stand Out Features](#Stand Out Features)
+* [About The Project](About The Project)
+* [Core Features](Core Features)
+* [Stand Out Features](Stand Out Features)
 * [Limitstions](Limitations)
 
 ## About The Project
