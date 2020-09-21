@@ -85,7 +85,7 @@ for (const link of links) {
 }
 
 function clickHandler(e) {
-  //invoke the slid function
+  //invoke the slid out function
   navSlideOut();
   //prevent click while getting the section topoffset
   e.preventDefault();
@@ -181,7 +181,7 @@ function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
 }
-
+//Added to slid in the burger menu
 const navSlideIn = () => {
     const burger = document.querySelector('.hamburger');
     const nav = document.querySelector('.Topnav');
@@ -189,11 +189,8 @@ const navSlideIn = () => {
     const navLinks = document.querySelectorAll('.Topnav li');
     // When we click on the burger we want the nav-links to get class nav-active
     burger.addEventListener('click', () => {
-            // burger.addEventListener('mouseover', ()=>{ if I want to make it hover
-            //Toggle Nav
             nav.classList.remove('nav-deactive');
             nav.classList.toggle('nav-active');
-
              //Animate Links
     navLinks.forEach((link, index) => {
         if(link.style.animation) {
@@ -205,22 +202,19 @@ const navSlideIn = () => {
        burger.classList.toggle('toggle');
      });
 }
-//invoke the slid function
+//invoke slide in to burger menu
 navSlideIn();
+//Added to slid out the burger menu
 const navSlideOut = () => {
     const burger = document.querySelector('.hamburger');
     const nav = document.querySelector('.Topnav');
     const navLinks = document.querySelectorAll('.Topnav li');
-
     //Toggle Nav
     nav.classList.remove('nav-active');
       nav.classList.toggle('nav-deactive');
       navLinks.forEach((link, index) => {
-              console.log(index);
               link.style.animation = '';
           });
 
     burger.classList.toggle('toggle');
-
-
 }
