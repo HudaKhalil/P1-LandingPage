@@ -2,10 +2,10 @@
 
 ## Table of Contents
 
-* [About The Project](#About The Project)
-* [Core Features](#Core Features)
-* [Stand Out Features](#Stand Out Features)
-* [Limitstions](Limitations)
+* [About The Project](#AboutTheProject)
+* [Core Features](#CoreFeatures)
+* [Stand Out Features](#StandOutFeatures)
+* [Limitstions](#Limitations)
 
 ## About The Project
 
@@ -39,14 +39,14 @@ Create a variable for all links in the nav bar, then prevent click handler until
     This feature I searched for it in google and I found this site [MIT License](https://gomakethings.com)
     and I implemented in my landing page.
     
--***Scroll To Top Button ***
+- ***Scroll To Top Button***
     I created a button in the layout with display none. When the user scrolls down 60px from the top of the document, show the button (display block) and hide the navBar while scrolling.
     
--***Design and Layout***
+- ***Design and Layout***
 I've changed in the layout design by adding some pictures and css enhancemnts. Also I added content rather than the layout start test written.
 
 
--**Responsive Enhancement**
+- ***Responsive Enhancement***
 Created some media queries for basic checkpoints in the desgin.
 
 ## Limitations
