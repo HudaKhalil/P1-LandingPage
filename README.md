@@ -5,7 +5,6 @@
 * [About The Project](#AboutTheProject)
 * [Core Features](#CoreFeatures)
 * [Stand Out Features](#StandOutFeatures)
-* [Limitstions](#Limitations)
 
 ## About The Project
 
@@ -49,6 +48,5 @@ I've changed in the layout design by adding some pictures and css enhancemnts. A
 - ***Responsive Enhancement***
 Created some media queries for basic checkpoints in the desgin.
 
-## Limitations
-
-I tried to create the hamburger menu but didn't work correct in with me.
+- ***Hamburger Nav Menu***
+Created a hamburger menu for small screen view with animation and responsive design for mobile view.
