@@ -81,7 +81,8 @@ h2 {
     font-family: 'Gloria Hallelujah', cursive;
     font-family: 'Merienda', cursive;
     font-size: 3em;
-    color: #000;
+    color: rgb(255, 248, 59);
+    text-shadow: 3px 3px  9px #000;
 }
 
 p {
@@ -109,10 +110,6 @@ main {
     padding-top: 3em;
 }
 
-/* section {
-    position: relative;
-    min-height: 80vh;
-} */
 
 /* ---- Module Rules ---- */
 
@@ -120,17 +117,32 @@ main {
 
 .navbar__menu{
     display: flex;
+    justify-content: space-around;
+    align-items: center;
     width: 100%;
     height: 8vh;
 }
 
-.navbar__menu .Topnav{
+.logo{
+    color: rgb(52,198,185);
+    text-shadow: 4px 4px  8px #000;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Merienda', cursive;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5%;
+}
+ .Topnav{
     display: flex;
     justify-content:space-around;
     align-items: center;
-    width: 60%;
+    width: 40%;
     margin-left: auto;
 }
+
+
 .navbar__menu .links{
   list-style: none;
 }
@@ -139,69 +151,99 @@ main {
     color: #000;
     font-size: 16px;
     font-family: 'Fira Sans', sans-serif;
+    letter-spacing: 1px;
+    font-weight: bold;
 }
+
 
 .navbar__menu .menu__link:hover {
     transition: ease 0.5s all;
     color: rgb(255, 248, 59);
-  text-decoration: underline;
+    text-shadow: 4px 4px  8px #000;
 }
 
-/* show a hamburger menu bar on small screens */
-@media only screen and (max-width: 50em) {
-  .line{
-      width: 30px;
-      height: 3px;
-      background: #000;
-      margin: 5px;
-  }
-  .navbar__menu{
-    position: relative;
-  }
-  .hamburger{
-    position: absolute;
+.hamburger{
+    display: none;
     cursor: pointer;
-    right: 5%;
-    top: 50%;
-    transform: translate(-5%, -50%);
-    z-index: 1;
-  }
-  .navbar__menu .Topnav{
-      position: fixed;
-      background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
-      /* height: 100vh;
-      width: 100%;
-      flex-direction: column; */
-      display: none;
-}
 }
 
-/* @media only screen and (max-width: 50em){
-    .Topnav li:not(:first-child){
-      display:none;
-        }
-    .Topnav li.icon {
-        float: right;
-        display: inline-flex;
-        padding: 1em 1em .2em 0;
-        margin: 0;
-        }
+.hamburger div{
+    width: 30px;
+    height: 3px;
+    background-color: #000;
+    margin: 10px;
+    transition: all 0.3s ease;
 }
-@media screen and (max-width: 46em) {
-    .Topnav.responsive {
-          position: relative;
-        }
-      .Topnav.responsive .icon {
-          position: absolute;
-          right: 0;
-          top: 0;
-      }
-      .Topnav.responsive a {
-        float: none;
-        display: inline-block;
-        text-align: left;
-      }
-} */
+
+@media screen and (max-width: 1160px){
+    .Topnav{
+        width: 70%;
+    }
+}
+/* show a hamburger menu bar on small screens */
+@media screen and (max-width: 768px){
+    body{
+        overflow-x: hidden;
+    }
+    .Topnav{
+        position: absolute;
+        right: 0;
+        height: 92vh;
+        top: 8vh;
+        background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        align-items: center;
+        width: 50%;
+        transform: translateX(100%);
+        transition: transform 0.5s ease-in;
+    }
+
+    .Topnav li{
+        opacity: 0;
+    }
+
+    .hamburger{
+        display: block;
+    }
+
+    /* When we press burger the navigation bar should appear */
+    .nav-active {
+        transform: translateX(0%);
+    }
+    .nav-deactive{
+      transform: translateX(100%);
+    }
+}
+
+
+/* Build nav-link animation fadin for links one by one */
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+}
+/* Burger opening animation */
+.toggle .line1{
+    transform: rotate(-45deg) translate(-5px, 12px);
+}
+
+.toggle .line2{
+    opacity: 0;
+}
+
+.toggle .line3{
+    transform: rotate(45deg) translate(-5px, -12px);
+}
+
+
 /* Header Styles */
 .page__header {
     background-image: linear-gradient(to right, rgba(255, 3, 116)  0%, rgba(255, 166, 41) 100%);
@@ -243,28 +285,29 @@ main {
 .sec-container{
   display: block;
   justify-content: center;
+  position: relative;
   width: 100%;
   height: 80vw;
-  margin: 2%;
-  padding-top: 1%;
+  margin-top: 2.5%;
+
 }
 
 .landing__container {
     display: block;
     width: 100%;
-    height: 77vw;
-    margin: auto;
+    height: 80vw;
+    padding-top: 2%
+
 }
 .box__container{
     display: inline-flex;
-    flex: 1;
     width: 100%;
-    height: 80vw;
+    height: 75vw;
 }
 .text_container{
   display: inline-block;
   text-align:justify;
-  height: 65vw;
+  height: 75vw;
   width: 50%;
   padding: 1%;
   margin:auto;
@@ -290,14 +333,14 @@ main {
     display: inline-flex;
     flex-direction: column;
     justify-content: center;
-    margin: auto;
+    padding-top: 4%;
   }
   .box__container{
       display: inline-flex;
       flex-direction: column;
       justify-content: center;
       width: 100%;
-      height: 80vw;
+      height: 60vw;
     }
   .text_container{
       height: 50%;
@@ -313,12 +356,6 @@ main {
       flex-wrap: wrap;
     }
 }
-/* @media only screen and (min-width: 35em){
-    .landing__container {
-        max-width: 50em;
-        padding: 4em;
-    }
-} */
 
 /* Background Circles */
 /* Note that background circles are created with psuedo elements before and after */
@@ -336,9 +373,14 @@ section:nth-of-type(odd) .landing__container::before {
 }
 section:nth-of-type(odd) .landing__container h2{
       text-align: left;
+      margin-top: 1%;
+      padding-top: 1%;
+
 }
-section:nth-of-type(odd) .box__container{
-      flex-direction: row-reverse;
+@media  only screen and (min-width: 50em){
+  section:nth-of-type(odd) .box__container{
+        flex-direction: row-reverse;
+  }
 }
 
 section:nth-of-type(even) .landing__container::before {
@@ -357,6 +399,8 @@ section:nth-of-type(even) .landing__container::before {
 }
 section:nth-of-type(even) .landing__container h2{
       text-align: right;
+      marign-right: 1%;
+      padding: 2%;
 }
 
 section:nth-of-type(3n) .landing__container::after {
@@ -388,7 +432,6 @@ section:nth-of-type(3n + 1) .landing__container::after {
     opacity: 0;
     transition: ease 0.5s all;
 }
-
 
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */

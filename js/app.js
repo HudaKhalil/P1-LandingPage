@@ -57,6 +57,7 @@
 
   };
   navBuild ();
+
 // Add class 'active' to section when near top of viewport
   // Get the section top position
   const offset = (section) => {
@@ -77,22 +78,25 @@
 
 // Scroll to anchor ID using scrollTO event
 //Select all anchor links
-const links = document.querySelectorAll(".page__header ul a");
+const links = document.querySelectorAll('.page__header ul a');
 //When click
 for (const link of links) {
-  link.addEventListener("click", clickHandler);
+  link.addEventListener('click', clickHandler);
 }
 
 function clickHandler(e) {
+  //invoke the slid out function
+  navSlideOut();
   //prevent click while getting the section topoffset
   e.preventDefault();
-  const href = this.getAttribute("href");
+  const href = this.getAttribute('href');
   const offsetTop = document.querySelector(href).offsetTop;
   // Then scroll
   scrollTo({
     top: offsetTop,
     behavior: "smooth"
   });
+
 }
 
 /**
@@ -176,4 +180,41 @@ function scrollFunction() {
 function topFunction() {
   document.body.scrollTop = 0;
   document.documentElement.scrollTop = 0;
+}
+//Added to slid in the burger menu
+const navSlideIn = () => {
+    const burger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.Topnav');
+    //Select all links to display in the slide bar
+    const navLinks = document.querySelectorAll('.Topnav li');
+    // When we click on the burger we want the nav-links to get class nav-active
+    burger.addEventListener('click', () => {
+            nav.classList.remove('nav-deactive');
+            nav.classList.toggle('nav-active');
+             //Animate Links
+    navLinks.forEach((link, index) => {
+        if(link.style.animation) {
+            link.style.animation = '';
+        }
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5 }s`;
+        });
+        //Burger Animation
+       burger.classList.toggle('toggle');
+     });
+}
+//invoke slide in to burger menu
+navSlideIn();
+//Added to slid out the burger menu
+const navSlideOut = () => {
+    const burger = document.querySelector('.hamburger');
+    const nav = document.querySelector('.Topnav');
+    const navLinks = document.querySelectorAll('.Topnav li');
+    //Toggle Nav
+    nav.classList.remove('nav-active');
+      nav.classList.toggle('nav-deactive');
+      navLinks.forEach((link, index) => {
+              link.style.animation = '';
+          });
+
+    burger.classList.toggle('toggle');
 }
